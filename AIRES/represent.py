@@ -73,14 +73,41 @@ class RepresentAIRES:
         fig = plt.figure(table)
         ax = fig.add_subplot()
         plt.title(f'{title}: {particle}')
+
         x = self.data_frame['Energy']
+
+        # Mean
         y = self.data_frame['Mean']
-        plt.plot(x, y)
-        ax.fill_between(x, y, 0)
+        plt.plot(x, y, color='#000000', label='Particles at Ground.')
+        ax.fill_between(x=x, y1=y, y2=0, color='#00B5B8')
+
+        # Minimum and Maximum
+        ymin = self.data_frame['Minimum']
+        ymax = self.data_frame['Maximum.']
+        plt.plot(x, ymin, color='#74508D', alpha=0.25)
+        plt.plot(x, ymax, color='#74508D', alpha=0.25)
+        ax.fill_between(x=x, y1=ymin, y2=ymax, color='#74508D', alpha=0.2, label='Maximum and Minimum.')
+
+        # Std. Dev.
+        ystd = self.data_frame['Std. Dev.'] / 2
+        plt.plot(x, y - ystd, color='#ED177A', alpha=0.25)
+        plt.plot(x, y + ystd, color='#ED177A', alpha=0.25)
+        ax.fill_between(x=x, y1=y - ystd, y2=y + ystd, color='#ED177A', alpha=0.2, label='Std. Dev.')
+
+        # RMS Error.
+        yrms = self.data_frame['RMS Error'] / 2
+        plt.plot(x, y - yrms, color='#279F00', alpha=0.25)
+        plt.plot(x, y + yrms, color='#279F00', alpha=0.25)
+        ax.fill_between(x=x, y1=y - yrms, y2=y + yrms, color='#279F00', alpha=0.2, label='RMS Error')
+
+        # Config
         ax.set_xlabel(f'Energy [{self.units["Energy"]}]')
         ax.set_xscale('log')
         # ax.set_yscale('log')
         ax.set_ylabel('Particles at Ground [#]')
+        ax.legend(loc='best')
+        ax.grid(which='both', alpha=0.25)
+        fig.savefig(f'{title} {particle}png')
 
     def histogram(self):
         table, title, particle = self.table_name.split(':')
@@ -91,7 +118,7 @@ class RepresentAIRES:
         ax.hist(x, bins='auto')
 
 
-RepresentAIRES(file='learn1.t2501')
-RepresentAIRES(file='learn1.t2505')
-RepresentAIRES(file='learn1.t2507')
-RepresentAIRES(file='learn1.t2508')
+RA = RepresentAIRES(file='learn1.t2501')
+RB = RepresentAIRES(file='learn1.t2505')
+RC = RepresentAIRES(file='learn1.t2507')
+RD = RepresentAIRES(file='learn1.t2508')
