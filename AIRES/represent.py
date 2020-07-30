@@ -3,22 +3,20 @@ import pandas as pd
 import numpy as np
 
 
-class RepresentAIRES:
+class CookingDataAIRES:
     def __init__(self, file: str = 'learn1.t2505'):
         # Initialize constants
         self.file_name = file
         self.table_name = ''
         self.units = {}
         self.date = None
-        self.num_sowers = 0
+        self.num_showers = 0
         self.col_titles = []
         self.data_frame = None
 
         # Invoke functions
         self.read_data()
         self.energy_units(_to='MeV')
-        self.diagram()
-        # self.histogram()
 
     def read_data(self):
         with open(self.file_name, 'r') as f:
@@ -30,9 +28,9 @@ class RepresentAIRES:
                     if 'Task starting date:' in line:
                         self.date = line.split('date: ')[1]
                     if 'Number of showers' in line:
-                        self.num_sowers = int(line[-5:])
+                        self.num_showers = int(line[-5:])
                     if 'TABLE' in line:
-                        self.table_name = line.replace('#   ', '')
+                        self.table_name = line.replace('#   ', '').replace('.', '')
                     if 'Units used' in line:
                         ix = idx + 2
                         newline = lines[ix]
@@ -68,8 +66,53 @@ class RepresentAIRES:
         self.data_frame['Energy'] = factor * self.data_frame['Energy']
         self.units['Energy'] = _to
 
+
+class MergeData:
+    def __init__(self, cook_a, cook_b):
+        # Initialize constants
+
+        table_a, title_a, particle_a = cook_a.table_name.split(': ')
+        table_b, title_b, particle_b = cook_b.table_name.split(': ')
+        self.table_name = f'TABLES {table_a[-4:]} {table_b[-4:]}: {title_a}: {particle_a} and {particle_b}'
+
+        if cook_a.units == cook_b.units:
+            self.units = cook_a.units
+        else:
+            raise Exception('You are trying to sum values with different units.')
+
+        if cook_a.col_titles == cook_b.col_titles:
+            self.col_titles = cook_a.col_titles
+        else:
+            raise Exception('You are trying to merge data frames with different columns.')
+
+        self.data_frame_a = cook_a.data_frame
+        self.data_frame_b = cook_b.data_frame
+
+        self.data_frame = self.merge()
+
+    def merge(self):
+        out_data_frame = self.data_frame_a.copy()
+        out_data_frame.iloc[:, 1:] = self.data_frame_a.iloc[:, 1:].add(self.data_frame_b.iloc[:, 1:], axis='columns')
+        return out_data_frame
+
+
+class Represent:
+    def __init__(self, cook):
+        # Initialize constants
+        # self.file_name = cook.file_name
+        self.table_name = cook.table_name
+        self.units = cook.units
+        # self.date = cook.date
+        # self.num_showers = cook.num_showers
+        self.col_titles = cook.col_titles
+        self.data_frame = cook.data_frame
+
+        # Invoke functions
+        self.diagram()
+        # self.histogram()
+
     def diagram(self):
-        table, title, particle = self.table_name.split(':')
+        table, title, particle = self.table_name.split(': ')
         fig = plt.figure(table)
         ax = fig.add_subplot()
         plt.title(f'{title}: {particle}')
@@ -104,10 +147,11 @@ class RepresentAIRES:
         ax.set_xlabel(f'Energy / {self.units["Energy"]}')
         ax.set_xscale('log')
         ax.set_ylabel('Particles at Ground')
+        plt.yticks(rotation=60)
         ax.legend(loc='best')
         ax.grid(which='both', alpha=0.25)
 
-        # fig.savefig(f'{title} {particle}png')
+        fig.savefig(f"{table.replace(' ', '_')}_{title.replace(' ', '_')}_{particle.replace(' ', '_')}.png")
 
     def histogram(self):
         table, title, particle = self.table_name.split(':')
@@ -118,7 +162,15 @@ class RepresentAIRES:
         ax.hist(x, bins='auto')
 
 
-RA = RepresentAIRES(file='learn1.t2501')
-RB = RepresentAIRES(file='learn1.t2505')
-RC = RepresentAIRES(file='learn1.t2507')
-RD = RepresentAIRES(file='learn1.t2508')
+if __name__ == '__main__':
+    gamma = CookingDataAIRES(file='learn1.t2501')
+    elect = CookingDataAIRES(file='learn1.t2505')
+    p_muon = CookingDataAIRES(file='learn1.t2507')
+    m_muon = CookingDataAIRES(file='learn1.t2508')
+
+    muons = MergeData(p_muon, m_muon)
+    output = muons.data_frame
+
+    Represent(gamma)
+    Represent(elect)
+    Represent(muons)
