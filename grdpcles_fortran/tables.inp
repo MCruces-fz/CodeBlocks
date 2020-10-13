@@ -1,0 +1,40 @@
+#------------------------------------------------------------------------------
+#
+# File tables.inp: Input file included from travel_TT.inp
+#
+#------------------------------------------------------------------------------
+
+#------------------------ OUTPUT CONTROL STATEMENTS ---------------------------
+
+LaTeX  # To print with better appearance
+StackInfo  # To see stack usage (rather technical stuff).
+OutputListing Full  # More technical stuff.
+TableIndex # Use this directive once, hard copy the resulting listing and
+           # keep it at hand. It is useful for reference.
+
+#---------------------- ENERGY DISTRIBUTION AT GROUND -------------------------
+
+PrintTable 2501
+PrintTable 2505
+PrintTable 2506
+PrintTable 2507
+PrintTable 2508
+PrintTable 2521
+PrintTable 2522
+PrintTable 5513
+
+ExportTable 2501
+ExportTable 2505
+ExportTable 2506
+ExportTable 2507
+ExportTable 2508
+ExportTable 2521
+ExportTable 2522
+ExportTable 5513
+ExportTable 1001
+ExportTable 1301
+ExportTable 1501
+ExportTable 2001
+ExportTable 2301
+
+ELimsTables 1 MeV 1 TeV

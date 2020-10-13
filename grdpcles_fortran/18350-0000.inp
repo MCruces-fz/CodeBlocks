@@ -1,0 +1,63 @@
+#------------------------------------------------------------------------------
+#
+# File 18350-0000.inp
+#
+#------------------------------------------------------------------------------
+
+Task 18350-0000
+
+Remark    SPECTRUM OF ENERGIES (18350-0000)
+
+Rem &eor
+
+This is a first example of an input file for AIRES.
+
+&eor
+
+#--------------- MANDATORY DIRECTIVES (have no default values) ----------------
+
+TotalShowers        100
+PrimaryParticle     proton
+PrimaryEnergy       1 PeV
+# Gamma factor 1.7 as default: - (1 + 1.7) = -2.7
+
+#--------------------------- OPTIONAL DIRECTIVES  -----------------------------
+
+RunsPerProcess 5    # You will understand these directives when running
+ShowersPerRun  20   # the program (see the user's manual).
+
+Thinning   50 GeV  # Absolute as well as Relative specifications allowed.
+
+Ground     3 m     # TRISTAN on the ocean
+
+ObservingLevels 80 100 g/cm2 900 g/cm2
+# Num Levels [4, 510], First & Last obs. Levels.
+
+# Threshold energies. Particles are not followed below these energies.
+
+#                 HANS VALUES 1   DEFAULT VALUES
+GammaCutEnergy     100 keV     #      200 MeV
+ElectronCutEnergy   80 keV     #      200 MeV
+MuonCutEnergy        1 MeV     #        1 MeV
+NuclCutEnergy      150 MeV
+MesonCutEnergy     1.5 MeV
+
+#                 HANS VALUES 2
+# GammaCutEnergy     200 MeV
+# ElectronCutEnergy  100 MeV
+# MuonCutEnergy      100 MeV
+# NuclCutEnergy       50 MeV  # Nucleons and nuclei
+# MesonCutEnergy     1.5 MeV
+
+#------------------------------- INPUT FILES  ---------------------------------
+
+Input model.inp   # ATMOSPHERIC MODEL
+
+Input tables.inp  # TABLES
+
+
+###########
+### END ###
+###########
+
+End

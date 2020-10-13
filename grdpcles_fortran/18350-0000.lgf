@@ -1,0 +1,97 @@
+>>>>
+>>>> This is AIRES version 19.04.00 (24/Apr/2019)
+>>>> (Compiled by mcruces@fppercebe, date: 01/oct/2020) **
+>>>> USER: mcruces, HOST: fppercebe, DATE: 07/Oct/2020
+>>>>
+
+> 07/Oct/2020 13:42:18. Displaying a summary of the input directives:
+
+>>>>
+>>>>          REMARKS.
+>>>>
+
+        SPECTRUM OF ENERGIES (18350-0000)
+
+     This is a first example of an input file for AIRES.
+
+
+>>>>
+>>>>          PARAMETERS AND OPTIONS IN EFFECT.
+>>>>
+>>>> "(D)" indicates that the corresponding default value is being used.
+>>>>
+
+                           Task Name: 18350-0000
+
+     RUN CONTROL:
+             Total number of showers:        100
+                     Showers per run:         20
+                    Runs per process:          5
+     (D)            CPU time per run:   Infinite
+
+     FILE NAMES:
+                            Log file: 18350-0000.lgf
+                    Binary dump file: 18350-0000.idf
+                Compressed data file: 18350-0000.grdpcles   
+                Table export file(s): 18350-0000.tNNNN
+                 Output summary file: 18350-0000.sry    
+                   LaTeX output file: 18350-0000.tex    
+
+     BASIC PARAMETERS:
+     (D)                        Site: Site00
+                                      (Lat:   0.00 deg. Long:    0.00 deg.)
+     (D)                        Date: 07/Oct/2020
+
+                    Primary particle: Proton
+                      Primary energy: 1.0000 PeV
+     (D)        Primary zenith angle:     0.00 deg
+     (D)       Primary azimuth angle:     0.00 deg
+     (D)      Zero azimuth direction: Local magnetic north
+                     Thinning energy: 50.000 GeV
+     (D)          Injection altitude: 100.00 km (1.2829219E-03 g/cm2)
+                     Ground altitude: 3.0000 m  (1000.742 g/cm2)
+           First obs. level altitude: 15.302 km (100.0000 g/cm2)
+            Last obs. level altitude: 823.85 m  (900.0000 g/cm2)
+          Obs. levels and depth step:         80    10.127 g/cm2
+     (D)           Geomagnetic field: Off
+                 Table energy limits: 1.0000 MeV to 1.0000 TeV
+     (D)         Table radial limits: 50.000 m  to 2.0000 km
+     (D)   Output file radial limits: 250.00 m  to 12.000 km (grdpcles)
+
+     ADDITIONAL PARAMETERS:
+     (D)      Individual shower data: Brief
+               Cut energy for gammas: 100.000 keV
+                Cut energy for e+ e-: 80.000 keV
+              Cut energy for mu+ mu-: 1.0000 MeV
+               Cut energy for mesons: 1.5000 MeV
+             Cut energy for nucleons: 150.00 MeV
+     (D)    Record special primaries: On
+     (D)            Resampling ratio: 10.00000
+     (D)    Hadronic Mean Free Paths: SIBYLL231
+     (D)             SIBYLL23 switch: On
+     (D)                FLUKA switch: Off
+
+     MISCELLANEOUS:
+     (D)    Seed of random generator: Automatic
+                   Atmospheric model: My atmospheric model                      
+
+>>>>
+> 07/Oct/2020 13:42:19. Starting simulation of first shower.
+> 07/Oct/2020 13:42:49. End of run number 1.
+  Completed (total) showers: 20 (100)
+  CPU time for this run: 31.27 sec
+> 07/Oct/2020 13:43:19. End of run number 2.
+  Completed (total) showers: 40 (100)
+  CPU time for this run: 30.56 sec
+> 07/Oct/2020 13:43:50. End of run number 3.
+  Completed (total) showers: 60 (100)
+  CPU time for this run: 30.34 sec
+> 07/Oct/2020 13:44:18. End of run number 4.
+  Completed (total) showers: 80 (100)
+  CPU time for this run: 28.72 sec
+> 07/Oct/2020 13:44:46. End of run number 5.
+  CPU time for this run: 28.03 sec
+> 07/Oct/2020 13:44:46. Task completed.
+  Total number of showers: 100
+> 07/Oct/2020 13:44:46. Writing summary file.
+> 07/Oct/2020 13:44:46. End of processing.

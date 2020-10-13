@@ -1,0 +1,1310 @@
+\clearpage
+\begin{verbatim}
+>>>>
+>>>>
+>>>>        AAAAA    IIII   RRRRRR    EEEEEEE    SSSSS       \
+>>>>       AAAAAAA   IIII   RRRRRRR   EEEEEEE   SSSSSSS       A
+>>>>       AA   AA    II    RR   RR   EE        SS   SS        I
+>>>>       AAAAAAA    II    RRRRRR    EEEE       SSS            R-shower
+>>>>       AAAAAAA    II    RRRRR     EEEE         SSS          Extended
+>>>>       AA   AA    II    RR  RR    EE        SS   SS         Simulations
+>>>>       AA   AA   IIII   RR   RR   EEEEEEE   SSSSSSS         |
+>>>>       AA   AA   IIII   RR   RR   EEEEEEE    SSSSS         / \
+>>>>
+>>>>
+>>>>       Departamento de Fisica, Universidad de La Plata, ARGENTINA.
+>>>>
+>>>>
+>>>> This is AIRES version 19.04.00 (24/Apr/2019)
+>>>> (Compiled by mcruces@fppercebe, date: 01/oct/2020) **
+>>>> USER: mcruces, HOST: fppercebe, DATE: 07/Oct/2020
+>>>>
+
+
+
+
+                           Task Name: 18350-0000
+
+
+               Current date and time: 07/Oct/2020 13:44:46
+
+          Processing started at date: 07/Oct/2020 13:42:17
+
+            Processing ended at date: 07/Oct/2020 13:44:46
+
+             Total number of showers:        100
+
+                 Number of processes:          1
+
+                      Number of runs:          5
+
+                      Total CPU time: 2 min 28.92 sec
+
+            Avg. CPU time per shower: 1.4892 sec
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0002
+\begin{verbatim}
+>>>>                        SUMMARY OF INPUT DATA
+>>>>                        ---------------------
+
+>>>>
+>>>>          REMARKS.
+>>>>
+
+        SPECTRUM OF ENERGIES (18350-0000)
+
+     This is a first example of an input file for AIRES.
+
+
+>>>>
+>>>>          PARAMETERS AND OPTIONS IN EFFECT.
+>>>>
+>>>> "(D)" indicates that the corresponding default value is being used.
+>>>>
+
+                           Task Name: 18350-0000
+
+     RUN CONTROL:
+             Total number of showers:        100
+                     Showers per run:         20
+                    Runs per process:          5
+     (D)            CPU time per run:   Infinite
+
+     FILE NAMES:
+                            Log file: 18350-0000.lgf
+                    Binary dump file: 18350-0000.idf
+                Compressed data file: 18350-0000.grdpcles   
+                Table export file(s): 18350-0000.tNNNN
+                 Output summary file: 18350-0000.sry    
+                   LaTeX output file: 18350-0000.tex    
+
+     BASIC PARAMETERS:
+     (D)                        Site: Site00
+                                      (Lat:   0.00 deg. Long:    0.00 deg.)
+     (D)                        Date: 07/Oct/2020
+
+                    Primary particle: Proton
+                      Primary energy: 1.0000 PeV
+     (D)        Primary zenith angle:     0.00 deg
+     (D)       Primary azimuth angle:     0.00 deg
+     (D)      Zero azimuth direction: Local magnetic north
+                     Thinning energy: 50.000 GeV
+     (D)          Injection altitude: 100.00 km (1.2829219E-03 g/cm2)
+                     Ground altitude: 3.0000 m  (1000.742 g/cm2)
+           First obs. level altitude: 15.302 km (100.0000 g/cm2)
+            Last obs. level altitude: 823.85 m  (900.0000 g/cm2)
+          Obs. levels and depth step:         80    10.127 g/cm2
+     (D)           Geomagnetic field: Off
+                 Table energy limits: 1.0000 MeV to 1.0000 TeV
+     (D)         Table radial limits: 50.000 m  to 2.0000 km
+     (D)   Output file radial limits: 250.00 m  to 12.000 km (grdpcles)
+
+     ADDITIONAL PARAMETERS:
+     (D)      Individual shower data: Brief
+               Cut energy for gammas: 100.000 keV
+                Cut energy for e+ e-: 80.000 keV
+              Cut energy for mu+ mu-: 1.0000 MeV
+               Cut energy for mesons: 1.5000 MeV
+             Cut energy for nucleons: 150.00 MeV
+     (D)    Record special primaries: On
+     (D)            Resampling ratio: 10.00000
+     (D)    Hadronic Mean Free Paths: SIBYLL231
+     (D)             SIBYLL23 switch: On
+     (D)                FLUKA switch: Off
+
+     MISCELLANEOUS:
+     (D)    Seed of random generator: Automatic
+                   Atmospheric model: My atmospheric model                      
+
+>>>>
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0003
+\begin{verbatim}
+>>>>                           OUTPUT SUMMARY
+>>>>                           --------------
+
+
+>>>>          STACK USAGE
+
+              Total number of stacks:          4
+            Total size (entries, KB):      21337      5000
+
+           Stack number and category:      1     1
+                       Name of stack: Gamma rays
+             Processed by routine(s): GammaAdv         GammaDecay
+                       Model(s) used: Std. model for gammas + SIBYLL 2.31
+               Avg. calls per shower:      1142.06
+             Avg. size (entries, KB):     10427.14      2444
+           Peak size (avg, min, max):     20291.44      9512     29628
+          Hard write (avg, min, max):         5.52         0        20
+           Hard read (avg, min, max):        11.53         0        41
+         Tot entries (avg, min, max):    336769.15    210211    443254
+
+           Stack number and category:      2     1
+                       Name of stack: Electron-Positron
+             Processed by routine(s): EpmAdv           EpmDecay
+                       Model(s) used: Aires std. model for e+e-
+               Avg. calls per shower:       685.89
+             Avg. size (entries, KB):      9578.87      2245
+           Peak size (avg, min, max):     18030.25      7937     27226
+          Hard write (avg, min, max):         4.89         0        19
+           Hard read (avg, min, max):         5.58         0        16
+         Tot entries (avg, min, max):    380442.39    221895    492092
+
+           Stack number and category:      3     0
+                       Name of stack: Neutral particles
+             Processed by routine(s): HeavyntAdv       HeavyntDecay
+                       Model(s) used: Std. model for neutral pcles + SIBYLL 2.31
+               Avg. calls per shower:        86.96
+             Avg. size (entries, KB):       638.77       150
+           Peak size (avg, min, max):       844.55       323      1465
+          Hard write (avg, min, max):         1.14         0         2
+           Hard read (avg, min, max):         9.97         0        20
+         Tot entries (avg, min, max):      4990.80      1233      7465
+
+           Stack number and category:      4     0
+                       Name of stack: Heavy charged particles
+             Processed by routine(s): HeavychAdv       HeavychDecay
+                       Model(s) used: Std. model for heavy pcles + SIBYLL 2.31
+               Avg. calls per shower:       199.84
+             Avg. size (entries, KB):       692.22       162
+           Peak size (avg, min, max):       947.04       734      3143
+          Hard write (avg, min, max):         1.34         1         6
+           Hard read (avg, min, max):        11.30         7        20
+         Tot entries (avg, min, max):     12133.13      2924     17882
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0004
+\begin{verbatim}
+>>>>          PER SHOWER BALANCE OF PARTICLES
+
+
+ All particle numbers are expressed in units of 10^6 particles.
+
+
+                      Item     Mean   RMS Err.   Stddv.    Min.     Max.
+
+ Stack 1
+         Particles stacked:    73.950     0.75     7.51    37.71    95.53
+            Particles lost:     0.001     0.00     0.00     0.00     0.01
+           Low-E particles:    61.002     0.66     6.57    28.36    79.56
+  Pcles. that reached gnd.:     1.368     0.07     0.71     0.40     4.76
+
+ Stack 2
+         Particles stacked:   157.824     1.69    16.87    74.73   205.49
+            Particles lost:     0.000     0.00     0.00     0.00     0.01
+           Low-E particles:   378.398     4.07    40.65   177.50   493.97
+  Pcles. that reached gnd.:     0.144     0.01     0.08     0.04     0.53
+
+ Stack 3
+         Particles stacked:     0.053     0.00     0.01     0.02     0.08
+            Particles lost:     0.000     0.00     0.00     0.00     0.00
+           Low-E particles:     0.017     0.00     0.00     0.01     0.02
+  Pcles. that reached gnd.:     0.001     0.00     0.00     0.00     0.00
+
+ Stack 4
+         Particles stacked:     0.152     0.00     0.03     0.05     0.23
+            Particles lost:     0.000     0.00     0.00     0.00     0.00
+           Low-E particles:     0.022     0.00     0.00     0.01     0.03
+  Pcles. that reached gnd.:     0.014     0.00     0.00     0.00     0.02
+
+ Totals:
+         Particles stacked:   231.980     2.43    24.34   112.59   301.08
+            Particles lost:     0.001     0.00     0.00     0.00     0.01
+           Low-E particles:   439.440     4.72    47.21   205.89   573.54
+  Pcles. that reached gnd.:     1.526     0.08     0.80     0.46     5.30
+
+
+ Other particles not processed in stacks.
+
+                 Neutrinos:     0.119     0.00     0.03     0.04     0.18
+      Unphysical particles:     0.000     0.00     0.00     0.00     0.00
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0005
+\begin{verbatim}
+>>>>          PER SHOWER BALANCE OF ENERGY
+
+
+ All energies are expressed in units of the average primary
+ energy: 1.0000 PeV (1.0000000E+15 eV).
+
+
+                      Item      Mean   RMS Err.   Stddv.     Min.     Max.
+
+ Stack 1
+             Medium losses:  0.0002713  0.00000  0.00005  0.00017  0.00038
+            Particles lost:  0.0000066  0.00000  0.00001  0.00000  0.00005
+           Low-E particles:  0.0054307  0.00006  0.00058  0.00252  0.00709
+  Pcles. that reached gnd.:  0.0380601  0.00293  0.02934  0.00745  0.19678
+
+ Stack 2
+             Medium losses:  0.6758040  0.00686  0.06858  0.34409  0.87899
+            Particles lost:  0.0000005  0.00000  0.00000  0.00000  0.00001
+           Low-E particles:  0.0187597  0.00020  0.00201  0.00882  0.02449
+  Pcles. that reached gnd.:  0.0178407  0.00160  0.01599  0.00301  0.10559
+
+ Stack 3
+             Medium losses:  0.0054263  0.00013  0.00133  0.00105  0.00826
+            Particles lost:  0.0000004  0.00000  0.00000  0.00000  0.00001
+           Low-E particles:  0.0009065  0.00002  0.00017  0.00041  0.00129
+  Pcles. that reached gnd.:  0.0064549  0.00229  0.02288  0.00018  0.17555
+
+ Stack 4
+             Medium losses:  0.0346861  0.00078  0.00784  0.00904  0.05173
+            Particles lost:  0.0000000  0.00000  0.00000  0.00000  0.00000
+           Low-E particles:  0.0016264  0.00003  0.00033  0.00074  0.00238
+  Pcles. that reached gnd.:  0.1352991  0.00339  0.03390  0.02664  0.26243
+
+ Totals:
+
+            Primary energy:  1.0000000  0.00000  0.00000  1.00000  1.00000
+
+             Medium losses:  0.7161876  0.00649  0.06486  0.37273  0.88943
+            Particles lost:  0.0000075  0.00000  0.00001  0.00000  0.00005
+           Low-E particles:  0.0267233  0.00025  0.00247  0.01294  0.03272
+  Pcles. that reached gnd.:  0.1976549  0.00655  0.06553  0.06163  0.57877
+
+
+ Other particles not processed in stacks.
+
+                 Neutrinos:  0.0732820  0.00180  0.01795  0.01931  0.11988
+      Unphysical particles:  0.0000000  0.00000  0.00000  0.00000  0.00000
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0006
+\begin{verbatim}
+>>>>          PARTICLES REACHING GROUND LEVEL
+
+
+     All particle numbers are expressed in units of 10^3 particles.
+
+
+                           Mean   RMS Err.   Stddv.    Min.     Max.
+
+     Gamma rays         1367.6004   71.262  712.618  402.746 4756.799
+
+     Electrons            92.4863    5.252   52.516   30.365  327.143
+     Positrons            51.6706    3.233   32.328   10.573  207.280
+     Electr & positr     144.1569    8.423   84.225   44.910  534.424
+
+     Muons (+)             6.5886    0.164    1.640    1.351   10.930
+     Muons (-)             6.4777    0.163    1.629    1.368   10.444
+     All muons            13.0663    0.323    3.231    2.720   21.374
+
+     Pions (+)             0.1403    0.009    0.092    0.003    0.478
+     Pions (-)             0.1258    0.009    0.086    0.002    0.491
+     All pions             0.2660    0.016    0.161    0.005    0.852
+
+     Kaons (+)             0.0016    0.000    0.002    0.000    0.012
+     Kaons (-)             0.0017    0.000    0.003    0.000    0.019
+     All kaons             0.0033    0.000    0.004    0.000    0.022
+
+     Neutrons              0.7029    0.038    0.384    0.102    1.869
+     Protons               0.3613    0.021    0.208    0.069    1.044
+     Anti-protons          0.0159    0.002    0.017    0.000    0.087
+
+     Nuclei                0.0000    0.000    0.000    0.000    0.000
+
+     All charged         157.8698    8.513   85.127   56.079  546.372
+     All neutral        1368.3260   71.285  712.850  403.000 4757.911
+     All particles      1526.1959   79.677  796.771  459.434 5304.283
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0007
+\begin{verbatim}
+>>>>          UNWEIGHTED GROUND PARTICLE ENTRIES
+
+
+     All particle entry numbers are expressed in units of 10^3 entries.
+
+
+                           Mean   RMS Err.   Stddv.    Min.     Max.
+
+     Gamma rays          3.276000  0.22282  2.22819  0.81200 13.98100
+
+     Electrons           0.362510  0.02544  0.25442  0.11100  1.65100
+     Positrons           0.268220  0.02074  0.20739  0.06600  1.29700
+     Electr & positr     0.630730  0.04613  0.46132  0.17700  2.94800
+
+     Muons (+)           0.918870  0.02085  0.20847  0.22400  1.33100
+     Muons (-)           0.896650  0.02050  0.20503  0.18900  1.27200
+     All muons           1.815520  0.04123  0.41226  0.41300  2.57500
+
+     Pions (+)           0.038240  0.00254  0.02540  0.00300  0.16300
+     Pions (-)           0.036360  0.00248  0.02482  0.00200  0.14700
+     All pions           0.074600  0.00496  0.04963  0.00500  0.31000
+
+     Kaons (+)           0.001190  0.00015  0.00146  0.00000  0.00600
+     Kaons (-)           0.001140  0.00015  0.00149  0.00000  0.00900
+     All kaons           0.002330  0.00026  0.00256  0.00000  0.01200
+
+     Neutrons            0.041860  0.00213  0.02128  0.00900  0.10800
+     Protons             0.025700  0.00135  0.01353  0.00400  0.07100
+     Anti-protons        0.004110  0.00035  0.00350  0.00000  0.01600
+
+     Nuclei              0.000000  0.00000  0.00000  0.00000  0.00000
+
+     All charged         2.553000  0.06207  0.62073  0.80200  4.89100
+     All neutral         3.325150  0.22449  2.24487  0.82900 14.04900
+     All particles       5.878150  0.27106  2.71058  2.80100 18.35700
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0008
+\begin{verbatim}
+>>>>          ENERGY OF GROUND LEVEL PARTICLES
+
+
+     All energies are expressed in TeV.
+
+
+                           Mean   RMS Err.   Stddv.    Min.     Max.
+
+     Gamma rays           38.0601     2.93    29.34     7.45   196.78
+
+     Electrons             9.2713     0.82     8.19     1.44    54.26
+     Positrons             8.5694     0.78     7.83     1.25    51.33
+     Electr & positr      17.8407     1.60    15.99     3.01   105.59
+
+     Muons (+)            60.4780     1.74    17.39    13.68   131.07
+     Muons (-)            59.1370     1.49    14.92    12.20    91.94
+     All muons           119.6150     3.12    31.16    25.88   214.36
+
+     Pions (+)             5.7144     0.51     5.13     0.18    34.74
+     Pions (-)             6.9579     1.23    12.28     0.51   114.89
+     All pions            12.6723     1.64    16.43     0.69   149.63
+
+     Kaons (+)             0.5601     0.18     1.78     0.00    16.67
+     Kaons (-)             0.3766     0.07     0.70     0.00     3.06
+     All kaons             0.9367     0.20     2.00     0.00    16.67
+
+     Neutrons              1.9214     0.53     5.32     0.10    53.43
+     Protons               1.4598     0.24     2.43     0.07    23.64
+     Anti-protons          0.6138     0.09     0.89     0.00     5.69
+
+     Nuclei                0.0000     0.00     0.00     0.00     0.00
+
+     All charged         153.1399     3.92    39.15    36.50   368.02
+     All neutral          44.5150     3.88    38.79     8.12   210.75
+     All particles       197.6549     6.55    65.53    61.63   578.77
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0009
+\begin{verbatim}
+>>>>          OTHER SHOWER PARAMETERS
+
+
+                               Mean   RMS Err.   Stddv.    Min.     Max.
+
+ Vt. first interact. depth:    58.857     6.08    60.84     0.15   318.07
+ Sl. first interact. depth:    58.857     6.08    60.84     0.15   318.07
+         (Depths in g/cm2)
+
+
+     Shower maximum estimation:
+
+ Vt. depth of max. (g/cm2):   578.458     9.53    95.33   432.82  1158.42
+ Sl. depth of max. (g/cm2):   578.458     9.53    95.33   432.82  1158.42
+ Charged pcles. at maximum:   646.335     8.49    84.88   382.10   903.80
+              (Times 10^3)
+
+     Estimation on the "average shower":
+
+ Vt. depth of max. (g/cm2):   574.853
+ Charged pcles. at maximum:   598.512
+              (Times 10^3)
+
+     The fits were done with the Levenberg-Marquardt
+     nonlinear least-squares fitting algorithm, modelling
+     shower profiles with a 4-parameter Gaisser-Hillas function.
+
+     Number of showers with converged fits: 100
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0010
+\begin{verbatim}
+>>>>          SOME ADDITIONAL OUTPUT DATA
+
+
+                    Variable     Average     Minimum    Maximum
+
+     High E had. coll. calls        777.42        168       1154
+      Low E had. coll. calls       3214.58        749       4960
+     High E nuc. coll. calls          0.00          0          0
+      Low E nuc. coll. calls          0.00          0          0
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0011
+\begin{verbatim}
+TABLE 2501: Energy distribution at ground: Gamma rays.
+
+
+  All particle numbers are expressed in units of 10^3 particles.
+
+                                                           10.          1.00E+02
+  Bin    E (GeV)      Mean    Std. dev.                    |                 |
+                                          +===LOG-SCALE=========================
+    1    1.0000E-03     72.97     39.55   |                         -------o---
+    2    1.4125E-03     73.41     40.70   |                         -------o---
+    3    1.9953E-03     73.77     36.76   |                          ------o---
+    4    2.8184E-03     74.61     39.70   |                          ------o---
+    5    3.9811E-03     74.08     39.73   |                          ------o---
+    6    5.6234E-03     74.41     43.62   |                         -------o----
+    7    7.9433E-03     71.40     36.57   |                          -----o----
+    8    1.1220E-02     67.42     35.89   |                         ------o---
+    9    1.5849E-02     60.61     31.47   |                        ------o----
+   10    2.2387E-02     51.47     27.75   |                       ------o---
+   11    3.1623E-02     41.79     22.44   |                     ------o----
+   12    4.4668E-02     34.14     19.43   |                   -------o---
+   13    6.3096E-02     25.66     14.81   |                -------o----
+   14    8.9125E-02     18.83     11.14   |              -------o---
+   15    0.1259         13.42      8.18   |          --------o----
+   16    0.1778          9.34      6.09   |       --------o----
+   17    0.2512          6.48      4.37   |   ---------o----
+   18    0.3548          4.27      2.86   |---------o----
+   19    0.5012          2.89      2.12   -------o----
+   20    0.7079          1.96      1.60   ----o----
+   21     1.000          1.29      1.04   o-----
+   22     1.413          0.82      0.71   ---
+   23     1.995          0.57      0.50   |
+   24     2.818          0.37      0.36   |
+   25     3.981          0.22      0.22   |
+   26     5.623          0.15      0.17   |
+   27     7.943          0.09      0.10   |
+   28     11.22          0.06      0.07   |
+   29     15.85          0.04      0.05   |
+   30     22.39          0.02      0.03   |
+   31     31.62          0.01      0.02   |
+   32     44.67          0.01      0.01   |
+   33     63.10          0.01      0.01   |
+   34     89.13          0.00      0.01   |
+   35     125.9          0.00      0.00   |
+   36     177.8          0.00      0.00   |
+   37     251.2          0.00      0.00   |
+   38     354.8          0.00      0.00   |
+   39     501.2          0.00      0.00   |
+   40     707.9          0.00      0.00   |
+
+    <    1.0000E-03    511.00    268.69
+    >     1000.          0.00      0.00
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0012
+\begin{verbatim}
+TABLE 2505: Energy distribution at ground: Electrons.
+
+
+  All particle numbers are expressed in units of 10^3 particles.
+
+                                                           1.0           10.
+  Bin    E (GeV)      Mean    Std. dev.                    |                 |
+                                          +===LOG-SCALE=========================
+    1    1.0000E-03      3.17      3.08   --------------------------o-----
+    2    1.4125E-03      3.73      3.43   |      --------------------o------
+    3    1.9953E-03      4.27      3.32   |               ------------o-----
+    4    2.8184E-03      5.33      3.99   |                  -----------o-----
+    5    3.9811E-03      5.88      4.86   |                --------------o-----
+    6    5.6234E-03      6.70      4.50   |                      ---------o----
+    7    7.9433E-03      6.53      4.50   |                     ----------o----
+    8    1.1220E-02      7.19      4.53   |                        --------o----
+    9    1.5849E-02      6.46      3.96   |                       --------o----
+   10    2.2387E-02      6.61      4.28   |                       --------o----
+   11    3.1623E-02      5.74      3.76   |                     ---------o----
+   12    4.4668E-02      5.32      3.83   |                   ----------o-----
+   13    6.3096E-02      4.53      3.04   |                   ---------o----
+   14    8.9125E-02      3.76      2.69   |                ----------o-----
+   15    0.1259          3.00      2.19   |              -----------o----
+   16    0.1778          2.37      1.73   |            -----------o----
+   17    0.2512          1.78      1.32   |          ----------o-----
+   18    0.3548          1.23      0.92   |      -----------o-----
+   19    0.5012          0.91      0.80   ----------------o-----
+   20    0.7079          0.61      0.49   -------------o----
+   21     1.000          0.42      0.38   ----------o-----
+   22     1.413          0.28      0.23   -------o----
+   23     1.995          0.19      0.18   ---o------
+   24     2.818          0.11      0.12   ------
+   25     3.981          0.08      0.09   ---
+   26     5.623          0.05      0.05   |
+   27     7.943          0.03      0.04   |
+   28     11.22          0.02      0.03   |
+   29     15.85          0.01      0.02   |
+   30     22.39          0.01      0.01   |
+   31     31.62          0.00      0.01   |
+   32     44.67          0.00      0.00   |
+   33     63.10          0.00      0.00   |
+   34     89.13          0.00      0.00   |
+   35     125.9          0.00      0.00   |
+   36     177.8          0.00      0.00   |
+   37     251.2          0.00      0.00   |
+   38     354.8          0.00      0.00   |
+   39     501.2          0.00      0.00   |
+   40     707.9          0.00      0.00   |
+
+    <    1.0000E-03      6.16      4.45
+    >     1000.          0.00      0.00
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0013
+\begin{verbatim}
+TABLE 2506: Energy distribution at ground: Positrons.
+
+
+                                                       5.00E+02         5.00E+03
+  Bin    E (GeV)      Mean    Std. dev.                 |                  |
+                                          +===LOG-SCALE=========================
+    1    1.0000E-03    398.19    778.67   -------------o--------
+    2    1.4125E-03    770.07   1246.27   ------------------o--------
+    3    1.9953E-03   1291.65   1511.89   ----------------------o------
+    4    2.8184E-03   1568.10   1462.28   | ----------------------o-----
+    5    3.9811E-03   2101.87   2115.39   --------------------------o------
+    6    5.6234E-03   2622.31   2344.00   |         ------------------o-----
+    7    7.9433E-03   3667.65   3110.58   |              ---------------o-----
+    8    1.1220E-02   4215.74   3555.80   |                ---------------o-----
+    9    1.5849E-02   4360.45   3266.68   |                    -----------o----
+   10    2.2387E-02   4530.97   2970.67   |                       --------o----
+   11    3.1623E-02   4414.99   3149.40   |                     ----------o----
+   12    4.4668E-02   4022.74   3176.49   |                  ------------o-----
+   13    6.3096E-02   3776.92   2762.75   |                   -----------o----
+   14    8.9125E-02   3171.93   2558.52   |               -------------o-----
+   15    0.1259       2496.73   1744.28   |                 ---------o-----
+   16    0.1778       2071.71   1558.65   |              -----------o----
+   17    0.2512       1664.45   1240.42   |            -----------o-----
+   18    0.3548       1197.74    933.08   |        ------------o-----
+   19    0.5012        872.11    661.40   |       -----------o----
+   20    0.7079        601.01    508.08   |---------------o-----
+   21     1.000        414.50    374.00   -------------o-----
+   22     1.413        257.59    219.11   ---------o-----
+   23     1.995        202.23    197.66   -------o------
+   24     2.818        119.68    126.27   ---o------
+   25     3.981         78.50     91.16   o------
+   26     5.623         47.57     57.82   ---
+   27     7.943         30.77     33.81   |
+   28     11.22         19.42     24.57   |
+   29     15.85         12.52     16.13   |
+   30     22.39          6.86     10.17   |
+   31     31.62          4.92      7.59   |
+   32     44.67          2.78      5.04   |
+   33     63.10          1.86      3.40   |
+   34     89.13          1.04      2.40   |
+   35     125.9          0.55      1.32   |
+   36     177.8          0.33      0.91   |
+   37     251.2          0.28      0.68   |
+   38     354.8          0.13      0.44   |
+   39     501.2          0.02      0.14   |
+   40     707.9          0.04      0.20   |
+
+    <    1.0000E-03    651.59   1025.08
+    >     1000.          0.04      0.20
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0014
+\begin{verbatim}
+TABLE 2507: Energy distribution at ground: Muons (+).
+
+
+                                                         50.            5.00E+02
+  Bin    E (GeV)      Mean    Std. dev.                  |                 |
+                                          +===LOG-SCALE=========================
+    1    1.0000E-03      0.13      1.30   |
+    2    1.4125E-03      0.00      0.00   |
+    3    1.9953E-03      0.04      0.40   |
+    4    2.8184E-03      0.47      2.93   |
+    5    3.9811E-03      1.59     10.11   ----
+    6    5.6234E-03      3.06     12.26   ------
+    7    7.9433E-03      1.42      5.90   |
+    8    1.1220E-02      5.92     15.10   ---------
+    9    1.5849E-02      7.97     20.36   o----------
+   10    2.2387E-02     15.05     24.09   -----o--------
+   11    3.1623E-02     17.57     26.18   ------o--------
+   12    4.4668E-02     33.43     34.54   -----------o------
+   13    6.3096E-02     54.12     50.43   ---------------o------
+   14    8.9125E-02     70.91     63.72   -----------------o------
+   15    0.1259        116.90     76.44   |            --------o----
+   16    0.1778        170.30     93.12   |                 ------o----
+   17    0.2512        245.74    131.89   |                    ------o----
+   18    0.3548        303.61    165.63   |                      ------o----
+   19    0.5012        385.69    158.26   |                          ----o---
+   20    0.7079        448.05    187.06   |                           ----o---
+   21     1.000        536.08    199.42   |                             ----o--
+   22     1.413        563.79    200.11   |                              ---o--
+   23     1.995        582.09    183.32   |                              ---o---
+   24     2.818        566.12    158.88   |                              ---o--
+   25     3.981        513.78    144.76   |                              --o--
+   26     5.623        483.99    136.06   |                             ---o--
+   27     7.943        397.96    108.68   |                            --o--
+   28     11.22        317.19     88.32   |                          --o--
+   29     15.85        240.32     65.16   |                        --o--
+   30     22.39        173.37     51.04   |                     ---o--
+   31     31.62        119.98     32.52   |                  ---o--
+   32     44.67         81.86     22.55   |               ---o-
+   33     63.10         51.58     15.53   |           ---o--
+   34     89.13         32.04     10.36   |       ---o--
+   35     125.9         18.72      7.27   |  ----o--
+   36     177.8         11.62      4.65   ---o---
+   37     251.2          6.65      3.69   ---
+   38     354.8          3.92      2.30   |
+   39     501.2          2.40      1.78   |
+   40     707.9          1.23      1.23   |
+
+    <    1.0000E-03      0.00      0.00
+    >     1000.          1.91      1.68
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0015
+\begin{verbatim}
+TABLE 2508: Energy distribution at ground: Muons (-).
+
+
+                                                         50.            5.00E+02
+  Bin    E (GeV)      Mean    Std. dev.                  |                 |
+                                          +===LOG-SCALE=========================
+    1    1.0000E-03      0.11      1.06   |
+    2    1.4125E-03      0.34      3.44   |
+    3    1.9953E-03      0.09      0.89   |
+    4    2.8184E-03      0.30      2.17   |
+    5    3.9811E-03      0.91      4.52   |
+    6    5.6234E-03      1.00      5.60   |
+    7    7.9433E-03      2.17     11.16   -----
+    8    1.1220E-02      5.50     16.62   ---------
+    9    1.5849E-02     10.17     22.13   --o---------
+   10    2.2387E-02     12.61     23.06   ----o--------
+   11    3.1623E-02     24.76     34.32   ---------o-------
+   12    4.4668E-02     31.92     34.29   -----------o------
+   13    6.3096E-02     50.69     58.64   ---------------o------
+   14    8.9125E-02     74.60     57.93   |     ------------o-----
+   15    0.1259        118.73     83.65   |           ----------o----
+   16    0.1778        173.44    102.87   |                 -------o----
+   17    0.2512        235.59    127.64   |                    ------o----
+   18    0.3548        316.60    145.88   |                        -----o---
+   19    0.5012        409.71    170.76   |                          -----o--
+   20    0.7079        460.59    168.74   |                            ----o--
+   21     1.000        508.06    189.30   |                             ---o---
+   22     1.413        552.66    194.88   |                              ---o---
+   23     1.995        550.95    176.77   |                              ---o--
+   24     2.818        551.86    167.55   |                              ---o--
+   25     3.981        494.03    135.16   |                              --o--
+   26     5.623        459.63    139.62   |                             ---o--
+   27     7.943        386.83    117.27   |                           ---o--
+   28     11.22        308.88     88.61   |                          --o--
+   29     15.85        237.54     67.35   |                        --o--
+   30     22.39        171.70     50.33   |                     ---o--
+   31     31.62        118.44     36.78   |                  ---o--
+   32     44.67         78.92     22.44   |               --o--
+   33     63.10         50.10     14.23   |           ---o--
+   34     89.13         31.50     10.50   |       ---o--
+   35     125.9         19.08      6.54   |   ---o--
+   36     177.8         11.58      4.95   ---o---
+   37     251.2          6.57      3.56   ---
+   38     354.8          3.93      2.49   |
+   39     501.2          2.48      1.65   |
+   40     707.9          1.26      1.19   |
+
+    <    1.0000E-03      0.00      0.00
+    >     1000.          1.88      1.50
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0016
+\begin{verbatim}
+TABLE 2521: Energy distribution at ground: Neutrons.
+
+
+                                                           20.          2.00E+02
+  Bin    E (GeV)      Mean    Std. dev.                    |                  |
+                                          +===LOG-SCALE=========================
+    1    1.0000E-03      0.00      0.00   |
+    2    1.4125E-03      0.00      0.00   |
+    3    1.9953E-03      0.00      0.00   |
+    4    2.8184E-03      0.00      0.00   |
+    5    3.9811E-03      0.00      0.00   |
+    6    5.6234E-03      0.00      0.00   |
+    7    7.9433E-03      0.00      0.00   |
+    8    1.1220E-02      0.00      0.00   |
+    9    1.5849E-02      0.00      0.00   |
+   10    2.2387E-02      0.00      0.00   |
+   11    3.1623E-02      0.00      0.00   |
+   12    4.4668E-02      0.00      0.00   |
+   13    6.3096E-02      0.00      0.00   |
+   14    8.9125E-02      0.00      0.00   |
+   15    0.1259         63.62     79.97   ---------------------------o------
+   16    0.1778        127.54     90.91   |                     ----------o-----
+   17    0.2512        121.26     85.70   |                     ----------o----
+   18    0.3548         96.81     77.90   |                -------------o-----
+   19    0.5012         69.52     63.00   |       -------------------o-----
+   20    0.7079         58.31     65.35   --------------------------o------
+   21     1.000         42.17     41.13   -----------------------o------
+   22     1.413         29.94     30.36   ---------------------o-----
+   23     1.995         23.64     26.70   -------------------o------
+   24     2.818         22.19     26.54   ------------------o------
+   25     3.981         13.55     15.47   --------------o------
+   26     5.623         10.62     14.19   ------------o-------
+   27     7.943          7.36     10.44   ---------o-------
+   28     11.22          5.82      7.73   -------o-------
+   29     15.85          3.75      5.10   ----o-------
+   30     22.39          2.16      3.52   --------
+   31     31.62          1.27      2.06   ----
+   32     44.67          1.10      1.39   --
+   33     63.10          0.75      1.16   |
+   34     89.13          0.63      0.82   |
+   35     125.9          0.29      0.50   |
+   36     177.8          0.19      0.49   |
+   37     251.2          0.11      0.35   |
+   38     354.8          0.09      0.32   |
+   39     501.2          0.07      0.29   |
+   40     707.9          0.05      0.22   |
+
+    <    1.0000E-03      0.00      0.00
+    >     1000.          0.08      0.37
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0017
+\begin{verbatim}
+TABLE 2522: Energy distribution at ground: Protons.
+
+
+                                                          10.           1.00E+02
+  Bin    E (GeV)      Mean    Std. dev.                   |                  |
+                                          +===LOG-SCALE=========================
+    1    1.0000E-03      0.00      0.00   |
+    2    1.4125E-03      0.00      0.00   |
+    3    1.9953E-03      0.00      0.00   |
+    4    2.8184E-03      0.00      0.00   |
+    5    3.9811E-03      0.00      0.00   |
+    6    5.6234E-03      0.00      0.00   |
+    7    7.9433E-03      0.00      0.00   |
+    8    1.1220E-02      0.00      0.00   |
+    9    1.5849E-02      0.00      0.00   |
+   10    2.2387E-02      0.00      0.00   |
+   11    3.1623E-02      0.00      0.00   |
+   12    4.4668E-02      0.00      0.00   |
+   13    6.3096E-02      0.00      0.00   |
+   14    8.9125E-02      0.00      0.00   |
+   15    0.1259         12.70     24.78   ------------------o---------
+   16    0.1778         44.00     77.38   ----------------------------o---------
+   17    0.2512         44.36     45.57   ----------------------------o------
+   18    0.3548         42.95     73.37   ----------------------------o--------
+   19    0.5012         38.46     38.44   ---------------------------o------
+   20    0.7079         31.07     36.73   --------------------------o------
+   21     1.000         31.69     40.28   --------------------------o------
+   22     1.413         26.24     26.74   ------------------------o------
+   23     1.995         21.99     28.50   -----------------------o------
+   24     2.818         19.40     22.69   ----------------------o------
+   25     3.981         12.64     15.85   ------------------o-------
+   26     5.623         10.90     13.88   -----------------o-------
+   27     7.943          8.52     11.70   ---------------o-------
+   28     11.22          5.76      7.72   ------------o-------
+   29     15.85          3.29      4.72   --------o-------
+   30     22.39          2.24      3.69   ----o--------
+   31     31.62          1.90      3.00   ---o--------
+   32     44.67          1.03      1.30   ------
+   33     63.10          0.84      0.86   ---
+   34     89.13          0.58      0.91   --
+   35     125.9          0.28      0.57   |
+   36     177.8          0.21      0.54   |
+   37     251.2          0.14      0.38   |
+   38     354.8          0.04      0.20   |
+   39     501.2          0.03      0.17   |
+   40     707.9          0.03      0.17   |
+
+    <    1.0000E-03      0.00      0.00
+    >     1000.          0.08      0.31
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0018
+\begin{verbatim}
+TABLE 5513: Zenith and azimuth angles versus shower number.
+
+
+  Shower number      Zenith angle (deg)    Azimuth angle (deg)    Primary code
+ 
+          1                0.0000                 0.0000                 31
+          2                0.0000                 0.0000                 31
+          3                0.0000                 0.0000                 31
+          4                0.0000                 0.0000                 31
+          5                0.0000                 0.0000                 31
+          6                0.0000                 0.0000                 31
+          7                0.0000                 0.0000                 31
+          8                0.0000                 0.0000                 31
+          9                0.0000                 0.0000                 31
+         10                0.0000                 0.0000                 31
+         11                0.0000                 0.0000                 31
+         12                0.0000                 0.0000                 31
+         13                0.0000                 0.0000                 31
+         14                0.0000                 0.0000                 31
+         15                0.0000                 0.0000                 31
+         16                0.0000                 0.0000                 31
+         17                0.0000                 0.0000                 31
+         18                0.0000                 0.0000                 31
+         19                0.0000                 0.0000                 31
+         20                0.0000                 0.0000                 31
+         21                0.0000                 0.0000                 31
+         22                0.0000                 0.0000                 31
+         23                0.0000                 0.0000                 31
+         24                0.0000                 0.0000                 31
+         25                0.0000                 0.0000                 31
+         26                0.0000                 0.0000                 31
+         27                0.0000                 0.0000                 31
+         28                0.0000                 0.0000                 31
+         29                0.0000                 0.0000                 31
+         30                0.0000                 0.0000                 31
+         31                0.0000                 0.0000                 31
+         32                0.0000                 0.0000                 31
+         33                0.0000                 0.0000                 31
+         34                0.0000                 0.0000                 31
+         35                0.0000                 0.0000                 31
+         36                0.0000                 0.0000                 31
+         37                0.0000                 0.0000                 31
+         38                0.0000                 0.0000                 31
+         39                0.0000                 0.0000                 31
+         40                0.0000                 0.0000                 31
+         41                0.0000                 0.0000                 31
+         42                0.0000                 0.0000                 31
+         43                0.0000                 0.0000                 31
+         44                0.0000                 0.0000                 31
+         45                0.0000                 0.0000                 31
+         46                0.0000                 0.0000                 31
+         47                0.0000                 0.0000                 31
+         48                0.0000                 0.0000                 31
+         49                0.0000                 0.0000                 31
+         50                0.0000                 0.0000                 31
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0019
+\begin{verbatim}
+Table 5513 (continued)
+ 
+  Shower number      Zenith angle (deg)    Azimuth angle (deg)    Primary code
+ 
+         51                0.0000                 0.0000                 31
+         52                0.0000                 0.0000                 31
+         53                0.0000                 0.0000                 31
+         54                0.0000                 0.0000                 31
+         55                0.0000                 0.0000                 31
+         56                0.0000                 0.0000                 31
+         57                0.0000                 0.0000                 31
+         58                0.0000                 0.0000                 31
+         59                0.0000                 0.0000                 31
+         60                0.0000                 0.0000                 31
+         61                0.0000                 0.0000                 31
+         62                0.0000                 0.0000                 31
+         63                0.0000                 0.0000                 31
+         64                0.0000                 0.0000                 31
+         65                0.0000                 0.0000                 31
+         66                0.0000                 0.0000                 31
+         67                0.0000                 0.0000                 31
+         68                0.0000                 0.0000                 31
+         69                0.0000                 0.0000                 31
+         70                0.0000                 0.0000                 31
+         71                0.0000                 0.0000                 31
+         72                0.0000                 0.0000                 31
+         73                0.0000                 0.0000                 31
+         74                0.0000                 0.0000                 31
+         75                0.0000                 0.0000                 31
+         76                0.0000                 0.0000                 31
+         77                0.0000                 0.0000                 31
+         78                0.0000                 0.0000                 31
+         79                0.0000                 0.0000                 31
+         80                0.0000                 0.0000                 31
+         81                0.0000                 0.0000                 31
+         82                0.0000                 0.0000                 31
+         83                0.0000                 0.0000                 31
+         84                0.0000                 0.0000                 31
+         85                0.0000                 0.0000                 31
+         86                0.0000                 0.0000                 31
+         87                0.0000                 0.0000                 31
+         88                0.0000                 0.0000                 31
+         89                0.0000                 0.0000                 31
+         90                0.0000                 0.0000                 31
+         91                0.0000                 0.0000                 31
+         92                0.0000                 0.0000                 31
+         93                0.0000                 0.0000                 31
+         94                0.0000                 0.0000                 31
+         95                0.0000                 0.0000                 31
+         96                0.0000                 0.0000                 31
+         97                0.0000                 0.0000                 31
+         98                0.0000                 0.0000                 31
+         99                0.0000                 0.0000                 31
+        100                0.0000                 0.0000                 31
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0020
+\begin{verbatim}
+>>>>          TABLE INDEX.
+
+
+       Code   Name
+
+   1   0100   Atmospheric profile.
+
+   2   1001   Longitudinal development: Gamma rays.
+   3   1005   Longitudinal development: Electrons.
+   4   1006   Longitudinal development: Positrons.
+   5   1007   Longitudinal development: Muons (+).
+   6   1008   Longitudinal development: Muons (-).
+   7   1011   Longitudinal development: Pions (+).
+   8   1012   Longitudinal development: Pions (-).
+   9   1013   Longitudinal development: Kaons (+).
+  10   1014   Longitudinal development: Kaons (-).
+  11   1021   Longitudinal development: Neutrons.
+  12   1022   Longitudinal development: Protons.
+  13   1023   Longitudinal development: Antiprotons.
+  14   1041   Longitudinal development: Nuclei.
+  15   1091   Longitudinal development: Other charged pcles.
+  16   1092   Longitudinal development: Other neutral pcles.
+  17   1205   Longitudinal development: e+ and e-
+  18   1207   Longitudinal development: mu+ and mu-
+  19   1211   Longitudinal development: pi+ and pi-
+  20   1213   Longitudinal development: K+ and K-
+  21   1291   Longitudinal development: All charged particles.
+  22   1292   Longitudinal development: All neutral particles.
+  23   1293   Longitudinal development: All particles.
+
+  24   1301   Unweighted longit. development: Gamma rays.
+  25   1305   Unweighted longit. development: Electrons.
+  26   1306   Unweighted longit. development: Positrons.
+  27   1307   Unweighted longit. development: Muons (+).
+  28   1308   Unweighted longit. development: Muons (-).
+  29   1311   Unweighted longit. development: Pions (+).
+  30   1312   Unweighted longit. development: Pions (-).
+  31   1313   Unweighted longit. development: Kaons (+).
+  32   1314   Unweighted longit. development: Kaons (-).
+  33   1321   Unweighted longit. development: Neutrons.
+  34   1322   Unweighted longit. development: Protons.
+  35   1323   Unweighted longit. development: Antiprotons.
+  36   1341   Unweighted longit. development: Nuclei.
+  37   1391   Unweighted longit. development: Other charged pcles.
+  38   1392   Unweighted longit. development: Other neutral pcles.
+  39   1405   Unweighted longit. development: e+ and e-
+  40   1407   Unweighted longit. development: mu+ and mu-
+  41   1411   Unweighted longit. development: pi+ and pi-
+  42   1413   Unweighted longit. development: K+ and K-
+  43   1491   Unweighted longit. development: All charged particles.
+  44   1492   Unweighted longit. development: All neutral particles.
+  45   1493   Unweighted longit. development: All particles.
+
+  46   1501   Longitudinal development: Energy of gamma rays.
+  47   1505   Longitudinal development: Energy of electrons.
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0021
+\begin{verbatim}
+Table index (continued)
+ 
+       Code   Name
+ 
+  48   1506   Longitudinal development: Energy of positrons.
+  49   1507   Longitudinal development: Energy of muons (+).
+  50   1508   Longitudinal development: Energy of muons (-).
+  51   1511   Longitudinal development: Energy of pions (+).
+  52   1512   Longitudinal development: Energy of pions (-).
+  53   1513   Longitudinal development: Energy of kaons (+).
+  54   1514   Longitudinal development: Energy of kaons (-).
+  55   1521   Longitudinal development: Energy of neutrons.
+  56   1522   Longitudinal development: Energy of protons.
+  57   1523   Longitudinal development: Energy of Antiprotons.
+  58   1541   Longitudinal development: Energy of nuclei.
+  59   1591   Longitudinal development: Energy of other charged particles.
+  60   1592   Longitudinal development: Energy of other neutral particles.
+  61   1705   Longitudinal development: Energy of e+ and e-
+  62   1707   Longitudinal development: Energy of mu+ and mu-
+  63   1711   Longitudinal development: Energy of pi+ and pi-
+  64   1713   Longitudinal development: Energy of K+ and K-
+  65   1791   Longitudinal development: Energy of all charged particles.
+  66   1792   Longitudinal development: Energy of all neutral particles.
+  67   1793   Longitudinal development: Energy of all particles.
+
+  68   2001   Lateral distribution: Gamma rays.
+  69   2005   Lateral distribution: Electrons.
+  70   2006   Lateral distribution: Positrons.
+  71   2007   Lateral distribution: Muons (+).
+  72   2008   Lateral distribution: Muons (-).
+  73   2011   Lateral distribution: Pions (+).
+  74   2012   Lateral distribution: Pions (-).
+  75   2013   Lateral distribution: Kaons (+).
+  76   2014   Lateral distribution: Kaons (-).
+  77   2021   Lateral distribution: Neutrons.
+  78   2022   Lateral distribution: Protons.
+  79   2023   Lateral distribution: Antiprotons.
+  80   2041   Lateral distribution: Nuclei.
+  81   2091   Lateral distribution: Other charged pcles.
+  82   2092   Lateral distribution: Other neutral pcles.
+  83   2205   Lateral distribution: e+ and e-
+  84   2207   Lateral distribution: mu+ and mu-
+  85   2211   Lateral distribution: pi+ and pi-
+  86   2213   Lateral distribution: K+ and K-
+  87   2291   Lateral distribution: All charged particles.
+  88   2292   Lateral distribution: All neutral particles.
+  89   2293   Lateral distribution: All particles.
+
+  90   2301   Unweighted lateral distribution: Gamma rays.
+  91   2305   Unweighted lateral distribution: Electrons.
+  92   2306   Unweighted lateral distribution: Positrons.
+  93   2307   Unweighted lateral distribution: Muons (+).
+  94   2308   Unweighted lateral distribution: Muons (-).
+  95   2311   Unweighted lateral distribution: Pions (+).
+  96   2312   Unweighted lateral distribution: Pions (-).
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0022
+\begin{verbatim}
+Table index (continued)
+ 
+       Code   Name
+ 
+  97   2313   Unweighted lateral distribution: Kaons (+).
+  98   2314   Unweighted lateral distribution: Kaons (-).
+  99   2321   Unweighted lateral distribution: Neutrons.
+ 100   2322   Unweighted lateral distribution: Protons.
+ 101   2323   Unweighted lateral distribution: Antiprotons.
+ 102   2341   Unweighted lateral distribution: Nuclei.
+ 103   2391   Unweighted lateral distribution: Other charged pcles.
+ 104   2392   Unweighted lateral distribution: Other neutral pcles.
+ 105   2405   Unweighted lateral distribution: e+ and e-
+ 106   2407   Unweighted lateral distribution: mu+ and mu-
+ 107   2411   Unweighted lateral distribution: pi+ and pi-
+ 108   2413   Unweighted lateral distribution: K+ and K-
+ 109   2491   Unweighted lateral distribution: All charged particles.
+ 110   2492   Unweighted lateral distribution: All neutral particles.
+ 111   2493   Unweighted lateral distribution: All particles.
+
+ 112   2501   Energy distribution at ground: Gamma rays.
+ 113   2505   Energy distribution at ground: Electrons.
+ 114   2506   Energy distribution at ground: Positrons.
+ 115   2507   Energy distribution at ground: Muons (+).
+ 116   2508   Energy distribution at ground: Muons (-).
+ 117   2511   Energy distribution at ground: Pions (+).
+ 118   2512   Energy distribution at ground: Pions (-).
+ 119   2513   Energy distribution at ground: Kaons (+).
+ 120   2514   Energy distribution at ground: Kaons (-).
+ 121   2521   Energy distribution at ground: Neutrons.
+ 122   2522   Energy distribution at ground: Protons.
+ 123   2523   Energy distribution at ground: Antiprotons.
+ 124   2541   Energy distribution at ground: Nuclei.
+ 125   2591   Energy distribution at ground: Other charged pcles.
+ 126   2592   Energy distribution at ground: Other neutral pcles.
+ 127   2705   Energy distribution at ground: e+ and e-
+ 128   2707   Energy distribution at ground: mu+ and mu-
+ 129   2711   Energy distribution at ground: pi+ and pi-
+ 130   2713   Energy distribution at ground: K+ and K-
+ 131   2791   Energy distribution at ground: All charged particles.
+ 132   2792   Energy distribution at ground: All neutral particles.
+ 133   2793   Energy distribution at ground: All particles.
+
+ 134   2801   Unweighted energy distribution: Gamma rays.
+ 135   2805   Unweighted energy distribution: Electrons.
+ 136   2806   Unweighted energy distribution: Positrons.
+ 137   2807   Unweighted energy distribution: Muons (+).
+ 138   2808   Unweighted energy distribution: Muons (-).
+ 139   2811   Unweighted energy distribution: Pions (+).
+ 140   2812   Unweighted energy distribution: Pions (-).
+ 141   2813   Unweighted energy distribution: Kaons (+).
+ 142   2814   Unweighted energy distribution: Kaons (-).
+ 143   2821   Unweighted energy distribution: Neutrons.
+ 144   2822   Unweighted energy distribution: Protons.
+ 145   2823   Unweighted energy distribution: Antiprotons.
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0023
+\begin{verbatim}
+Table index (continued)
+ 
+       Code   Name
+ 
+ 146   2841   Unweighted energy distribution: Nuclei.
+ 147   2891   Unweighted energy distribution: Other charged pcles.
+ 148   2892   Unweighted energy distribution: Other neutral pcles.
+ 149   2905   Unweighted energy distribution: e+ and e-
+ 150   2907   Unweighted energy distribution: mu+ and mu-
+ 151   2911   Unweighted energy distribution: pi+ and pi-
+ 152   2913   Unweighted energy distribution: K+ and K-
+ 153   2991   Unweighted energy distribution: All charged particles.
+ 154   2992   Unweighted energy distribution: All neutral particles.
+ 155   2993   Unweighted energy distribution: All particles.
+
+ 156   3001   Mean arrival time distribution: Gamma rays.
+ 157   3005   Mean arrival time distribution: Electrons and positrons.
+ 158   3007   Mean arrival time distribution: Muons.
+ 159   3091   Mean arrival time distribution: Other charged pcles.
+ 160   3092   Mean arrival time distribution: Other neutral pcles.
+ 161   3291   Mean arrival time distribution: All charged particles.
+ 162   3292   Mean arrival time distribution: All neutral particles.
+ 163   3293   Mean arrival time distribution: All particles.
+
+ 164   5001   Number and energy of ground gammas versus shower number.
+ 165   5005   Number and energy of ground e- versus shower number.
+ 166   5006   Number and energy of ground e+ versus shower number.
+ 167   5007   Number and energy of ground mu+ versus shower number.
+ 168   5008   Number and energy of ground mu- versus shower number.
+ 169   5011   Number and energy of ground pi+ versus shower number.
+ 170   5012   Number and energy of ground pi- versus shower number.
+ 171   5013   Number and energy of ground K+ versus shower number.
+ 172   5014   Number and energy of ground K- versus shower number.
+ 173   5021   Number and energy of ground neutrons versus shower number.
+ 174   5022   Number and energy of ground protons versus shower number.
+ 175   5023   Number and energy of ground pbar versus shower number.
+ 176   5041   Number and energy of ground nuclei versus shower number.
+ 177   5091   Number and energy of other grd. ch. pcles. versus shower number.
+ 178   5092   Number and energy of other grd. nt. pcles. versus shower number.
+ 179   5205   Number and energy of ground e+ and e- versus shower number.
+ 180   5207   Number and energy of ground mu+ and mu- versus shower number.
+ 181   5211   Number and energy of ground pi+ and pi- versus shower number.
+ 182   5213   Number and energy of ground K+ and K- versus shower number.
+ 183   5291   Number and energy of ground ch. pcles. versus shower number.
+ 184   5292   Number and energy of ground nt. pcles. versus shower number.
+ 185   5293   Number and energy of all ground particles versus shower number.
+ 186   5501   Xmax and Nmax (charged particles) versus shower number.
+ 187   5511   First interact. depth and primary energy versus shower number.
+ 188   5513   Zenith and azimuth angles versus shower number.
+
+ 189   6001   Number of created particles: Gamma rays.
+ 190   6005   Number of created particles: Electrons.
+ 191   6006   Number of created particles: Positrons.
+ 192   6007   Number of created particles: Muons (+).
+ 193   6008   Number of created particles: Muons (-).
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0024
+\begin{verbatim}
+Table index (continued)
+ 
+       Code   Name
+ 
+ 194   6011   Number of created particles: Pions (+).
+ 195   6012   Number of created particles: Pions (-).
+ 196   6013   Number of created particles: Kaons (+).
+ 197   6014   Number of created particles: Kaons (-).
+ 198   6021   Number of created particles: Neutrons.
+ 199   6022   Number of created particles: Protons.
+ 200   6023   Number of created particles: Antiprotons.
+ 201   6041   Number of created particles: Nuclei.
+ 202   6091   Number of created particles: Other charged pcles.
+ 203   6092   Number of created particles: Other neutral pcles.
+ 204   6205   Number of created particles: e+ and e-
+ 205   6207   Number of created particles: mu+ and mu-
+ 206   6211   Number of created particles: pi+ and pi-
+ 207   6213   Number of created particles: K+ and K-
+ 208   6291   Number of created particles: All charged particles.
+ 209   6292   Number of created particles: All neutral particles.
+ 210   6293   Number of created particles: All particles.
+ 211   6296   Number of created particles: All neutrinos.
+
+ 212   6301   Number of created entries: Gamma rays.
+ 213   6305   Number of created entries: Electrons.
+ 214   6306   Number of created entries: Positrons.
+ 215   6307   Number of created entries: Muons (+).
+ 216   6308   Number of created entries: Muons (-).
+ 217   6311   Number of created entries: Pions (+).
+ 218   6312   Number of created entries: Pions (-).
+ 219   6313   Number of created entries: Kaons (+).
+ 220   6314   Number of created entries: Kaons (-).
+ 221   6321   Number of created entries: Neutrons.
+ 222   6322   Number of created entries: Protons.
+ 223   6323   Number of created entries: Antiprotons.
+ 224   6341   Number of created entries: Nuclei.
+ 225   6391   Number of created entries: Other charged pcles.
+ 226   6392   Number of created entries: Other neutral pcles.
+ 227   6405   Number of created entries: e+ and e-
+ 228   6407   Number of created entries: mu+ and mu-
+ 229   6411   Number of created entries: pi+ and pi-
+ 230   6413   Number of created entries: K+ and K-
+ 231   6491   Number of created entries: All charged particles.
+ 232   6492   Number of created entries: All neutral particles.
+ 233   6493   Number of created entries: All particles.
+ 234   6496   Number of created entries: All neutrinos.
+
+ 235   6501   Energy of created particles: Gamma rays.
+ 236   6505   Energy of created particles: Electrons.
+ 237   6506   Energy of created particles: Positrons.
+ 238   6507   Energy of created particles: Muons (+).
+ 239   6508   Energy of created particles: Muons (-).
+ 240   6511   Energy of created particles: Pions (+).
+ 241   6512   Energy of created particles: Pions (-).
+ 242   6513   Energy of created particles: Kaons (+).
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0025
+\begin{verbatim}
+Table index (continued)
+ 
+       Code   Name
+ 
+ 243   6514   Energy of created particles: Kaons (-).
+ 244   6521   Energy of created particles: Neutrons.
+ 245   6522   Energy of created particles: Protons.
+ 246   6523   Energy of created particles: Antiprotons.
+ 247   6541   Energy of created particles: Nuclei.
+ 248   6591   Energy of created particles: Other charged pcles.
+ 249   6592   Energy of created particles: Other neutral pcles.
+ 250   6705   Energy of created particles: e+ and e-
+ 251   6707   Energy of created particles: mu+ and mu-
+ 252   6711   Energy of created particles: pi+ and pi-
+ 253   6713   Energy of created particles: K+ and K-
+ 254   6791   Energy of created particles: All charged particles.
+ 255   6792   Energy of created particles: All neutral particles.
+ 256   6793   Energy of created particles: All particles.
+ 257   6796   Energy of created particles: All neutrinos.
+
+ 258   7001   Longitudinal development: Low energy gamma rays.
+ 259   7005   Longitudinal development: Low energy electrons.
+ 260   7006   Longitudinal development: Low energy positrons.
+ 261   7007   Longitudinal development: Low energy muons (+).
+ 262   7008   Longitudinal development: Low energy muons (-).
+ 263   7091   Longitudinal development: Other charged low egy. pcles.
+ 264   7092   Longitudinal development: Other neutral low egy. pcles.
+ 265   7205   Longitudinal development: Low energy e+ and e-
+ 266   7207   Longitudinal development: Low energy mu+ and mu-
+ 267   7291   Longitudinal development: All low energy charged pcles.
+ 268   7292   Longitudinal development: All low energy neutral pcles.
+ 269   7293   Longitudinal development: All low energy pcles.
+
+ 270   7301   Unweighted longit. devel.: Low energy gamma rays.
+ 271   7305   Unweighted longit. devel.: Low energy electrons.
+ 272   7306   Unweighted longit. devel.: Low energy positrons.
+ 273   7307   Unweighted longit. devel.: Low energy muons (+).
+ 274   7308   Unweighted longit. devel.: Low energy muons (-).
+ 275   7391   Unweighted longit. devel.: Other charged low egy. pcles.
+ 276   7392   Unweighted longit. devel.: Other neutral low egy. pcles.
+ 277   7405   Unweighted longit. devel.: Low energy e+ and e-
+ 278   7407   Unweighted longit. devel.: Low energy mu+ and mu-
+ 279   7491   Unweighted longit. devel.: All low energy charged pcles.
+ 280   7492   Unweighted longit. devel.: All low energy neutral pcles.
+ 281   7493   Unweighted longit. devel.: All low energy pcles.
+
+ 282   7501   Longitudinal development: Energy of low egy. gamma rays.
+ 283   7505   Longitudinal development: Energy of low egy. electrons.
+ 284   7506   Longitudinal development: Energy of low egy. positrons.
+ 285   7507   Longitudinal development: Energy of low egy. muons(+).
+ 286   7508   Longitudinal development: Energy of low egy. muons(-).
+ 287   7591   Longitudinal development: Egy. of other charged low egy. pcles.
+ 288   7592   Longitudinal development: Egy. of other neutral low egy. pcles.
+ 289   7705   Longitudinal development: Energy of low egy. e+ and e-
+ 290   7707   Longitudinal development: Energy of low egy. mu+ and mu-
+\end{verbatim}
+\clearpage
+% AIRES summary.                                                    Page 0026
+\begin{verbatim}
+Table index (continued)
+ 
+       Code   Name
+ 
+ 291   7791   Longitudinal development: Egy. of all low egy. charged pcles.
+ 292   7792   Longitudinal development: Egy. of all low egy. neutral pcles.
+ 293   7793   Longitudinal development: Egy. of all low energy pcles.
+
+ 294   7801   Longitudinal development: Energy deposited by gamma rays.
+ 295   7805   Longitudinal development: Energy deposited by electrons.
+ 296   7806   Longitudinal development: Energy deposited by positrons.
+ 297   7807   Longitudinal development: Energy deposited by muons (+).
+ 298   7808   Longitudinal development: Energy deposited by muons (-).
+ 299   7891   Longitudinal development: Egy. deposited by other charged pcles.
+ 300   7892   Longitudinal development: Egy. deposited by other neutral pcles.
+ 301   7905   Longitudinal development: Energy deposited by e+ and e-
+ 302   7907   Longitudinal development: Energy deposited by mu+ and mu-
+ 303   7991   Longitudinal development: Egy. deposited by all charged pcles.
+ 304   7992   Longitudinal development: Egy. deposited by all neutral pcles.
+ 305   7993   Longitudinal development: Energy deposited by all pcles.
+
+
+>>>>          END OF SUMMARY.
+\end{verbatim}
