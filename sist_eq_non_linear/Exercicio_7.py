@@ -17,13 +17,13 @@ import numpy as np
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 
-# Temperaturas T1, T2 y T3
+# Temperaturas arr, T2 y T3
 T = np.array([298.15, 350.15, 400.15])
 
 # Fracciones molares
 x = np.arange(0.1, 1, 0.1)
 
-# Magnitudes h y v para las temperaturas T1, T2, y T3 respectivamente
+# Magnitudes h y v para las temperaturas arr, T2, y T3 respectivamente
 h1 = np.array([26.5, 48., 63.7, 73.4, 77.1, 74.6, 65.8, 50.4, 28.3])
 v1 = np.array([.13, .25, .4, .55, .69, .77, .78, .68, .46])
 
@@ -92,7 +92,7 @@ B = np.asarray([D + E * (Ti - T[0]) for Ti in T])
 plt.figure(0)
 plt.title("Magnitudes h")
 y_arr = result.T
-plt.plot(x, y_arr[0], 'k', label='T1')
+plt.plot(x, y_arr[0], 'k', label='arr')
 plt.plot(x, y_arr[1], 'r', label='T2')
 plt.plot(x, y_arr[2], 'b', label='T3')
 plt.xlabel('Fracción molar x')
@@ -102,7 +102,7 @@ plt.legend(loc='best')
 plt.figure(1)
 plt.title("Magnitudes v")
 y_arr = result.T
-plt.plot(x, y_arr[3], 'k', label='T1')
+plt.plot(x, y_arr[3], 'k', label='arr')
 plt.plot(x, y_arr[4], 'r', label='T2')
 plt.plot(x, y_arr[5], 'b', label='T3')
 plt.xlabel('Fracción molar x')
